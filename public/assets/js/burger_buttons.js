@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $(".page-container").on("click", ".eat-burger-btn", function (event) {
+    $(".page-container").on("click", function (event) {
       event.preventDefault();
       var id = $(this).data("id");
   
@@ -10,3 +10,5 @@ $(document).ready(function () {
       });
     });
   });
+
+  // need to fix this error: "Rethrow non-MySQL errors"; 'ER_BAD_FIELD_ERROR',   sql: 'UPDATE burgers SET devoured=undefined WHERE id = undefined'

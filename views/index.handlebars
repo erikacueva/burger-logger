@@ -9,7 +9,7 @@
         {{#unless this.devoured}}
 
         <h5>{{this.id}}.{{this.burger_name}}
-            <button type='submit' id={{this.id}} data-id="{{this.id}}">DEVOUR!</button>
+            <button class="devour-btn" type='submit' data-id="{{this.id}}">DEVOUR!</button>
         </h5>
 
         {{/unless}}
@@ -22,17 +22,17 @@
         {{#each burgers}}
         {{#if this.devoured}}
         <li>
-            <h5 {{this.id}}. {{this.burger_name}}</h5>
+            <h5> {{this.id}}. {{this.burger_name}}</h5>
         </li>
         {{/if}}
         {{/each}}
     </ul>
 
     <h2>Name your own burger!</h2>
-    <form>
+    <form action="/burgers/create" method="POST">
         <div class="form-group">
-            <label for="ca">Burger Name:</label>
-            <input type="text" name="name">
+            <label for="burger_name">Burger Name:</label>
+            <input type="text" name="burger_name">
         </div>
         <button type="submit">Add Burger</button>
     </form>
